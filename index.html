@@ -8,16 +8,20 @@
     <div class="container">
         <h1>✨ AI Quote Generator ✨</h1>
 
-        <form method="POST">
+        <form method="POST" action="/quote">
             <input type="text" name="topic" placeholder="Enter topic (Life, Success)" required>
             <button type="submit">Generate Quote</button>
         </form>
 
         {% if quote %}
         <div class="quote-box">
-            <p>{{ quote }}</p>
+            <ul>
+                {% for q in quote %}
+                    <li>{{ q }}</li>
+                {% endfor %}
+            </ul>
         </div>
-        {% endif %}
+    {% endif %}
     </div>
 </body>
 </html>
